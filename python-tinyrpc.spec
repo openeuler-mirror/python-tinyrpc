@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-tinyrpc
 Version:	0.9.1
-Release:	1
+Release:	2
 Summary:	A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 License:	MIT
 URL:		http://github.com/mbr/tinyrpc
@@ -13,7 +13,7 @@ A small, modular, transport and protocol neutral RPC library that, among other t
 
 %package -n python2-tinyrpc
 Summary:	A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
-Provides:	python-tinyrpc
+Provides:	python2-tinyrpc
 BuildRequires:	python2-devel
 BuildRequires:	python2-setuptools
 BuildRequires:  python2-pip
@@ -69,5 +69,7 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Mon May 10 2021 openstack-sig <openstack@openeuler.org>
+- Fix provides
 * Thu Apr 29 2021 openstack-sig <openstack@openeuler.org>
 - Package Spec generated
