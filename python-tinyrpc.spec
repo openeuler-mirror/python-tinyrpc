@@ -1,39 +1,40 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-tinyrpc
-Version:	1.0.4
-Release:	1
+Version:	0.5
+Release:	2
 Summary:	A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 License:	MIT
 URL:		http://github.com/mbr/tinyrpc
-Source0:	https://files.pythonhosted.org/packages/9d/91/c639ba014aada92446516c5fc4b04f2cee3539ab2d0758a6a87a6da973cb/tinyrpc-1.0.4.tar.gz
+Source0:	https://files.pythonhosted.org/packages/6c/58/76f73176153bf86990381189e1d9b187a8406788d5365c1e2e4ecd078268/tinyrpc-0.5.tar.gz
 BuildArch:	noarch
-
-
 %description
+A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 
 
-%package -n python3-tinyrpc
+%package -n python2-tinyrpc
 Summary:	A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
-Provides:	python-tinyrpc
-BuildRequires:	python3-devel
-BuildRequires:	python3-setuptools
-%description -n python3-tinyrpc
+Provides:	python2-tinyrpc
+BuildRequires:	python2-devel
+BuildRequires:	python2-setuptools
+%description -n python2-tinyrpc
+A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 
 
 %package help
 Summary:	Development documents and examples for tinyrpc
-Provides:	python3-tinyrpc-doc
+Provides:	python2-tinyrpc-doc
 %description help
+A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 
 
 %prep
-%autosetup -n tinyrpc-1.0.4
+%autosetup -n tinyrpc-0.5
 
 %build
-%py3_build
+%py2_build
 
 %install
-%py3_install
+%py2_install
 install -d -m755 %{buildroot}/%{_pkgdocdir}
 if [ -d doc ]; then cp -arf doc %{buildroot}/%{_pkgdocdir}; fi
 if [ -d docs ]; then cp -arf docs %{buildroot}/%{_pkgdocdir}; fi
@@ -60,12 +61,14 @@ popd
 mv %{buildroot}/filelist.lst .
 mv %{buildroot}/doclist.lst .
 
-%files -n python3-tinyrpc -f filelist.lst
-%dir %{python3_sitelib}/*
+%files -n python2-tinyrpc -f filelist.lst
+%{python2_sitelib}/*
 
 %files help -f doclist.lst
 %{_docdir}/*
 
 %changelog
-* Tue Nov 24 2020 Python_Bot <Python_Bot@openeuler.org>
+* Wen May 26 2021 openstack-sig <openstack@openeuler.org>
+- Fix Provides
+* Sun May 16 2021 openstack-sig <openstack@openeuler.org>
 - Package Spec generated
