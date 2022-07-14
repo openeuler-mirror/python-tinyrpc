@@ -1,11 +1,11 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-tinyrpc
-Version:	1.0.4
+Version:	1.1.5
 Release:	1
 Summary:	A small, modular, transport and protocol neutral RPC library that, among other things, supports JSON-RPC and zmq.
 License:	MIT
 URL:		http://github.com/mbr/tinyrpc
-Source0:	https://files.pythonhosted.org/packages/9d/91/c639ba014aada92446516c5fc4b04f2cee3539ab2d0758a6a87a6da973cb/tinyrpc-1.0.4.tar.gz
+Source0:	https://files.pythonhosted.org/packages/4c/d6/f0429f1af12e9c263135779514f9e4ed7f38253574c427726f517d45f049/tinyrpc-1.1.5.tar.gz
 BuildArch:	noarch
 
 
@@ -27,7 +27,7 @@ Provides:	python3-tinyrpc-doc
 
 
 %prep
-%autosetup -n tinyrpc-1.0.4
+%autosetup -n tinyrpc-1.1.5
 
 %build
 %py3_build
@@ -67,5 +67,8 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Fri Jul 15 2022 hkgy <kaguyahatu@outlook.com> - 1.1.5-1
+- Update package to 1.1.5
+
 * Tue Nov 24 2020 Python_Bot <Python_Bot@openeuler.org>
 - Package Spec generated
